@@ -1,1 +1,22 @@
+# 📊 Data Science Lab (R)
 
+This folder contains the laboratory programs and practical assignments completed as part of the **Data Science Lab** course using **R Programming**.
+
+## 📂 Contents
+
+- Data Import & Export
+- Data Cleaning
+- Data Manipulation
+- Data Visualization
+- Statistical Analysis
+- Basic Machine Learning
+- Lab Assignments
+
+## 🛠 Technologies Used
+
+- R
+- RStudio
+
+## 🎯 Objective
+
+To develop practical skills in data analysis, visualization, and statistical computing using R Programming.
