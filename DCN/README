@@ -1,1 +1,25 @@
+# Data Communication and Computer Networks (DCN)
 
+This folder contains the laboratory programs, experiments, and practical assignments completed as part of the Data Communication and Computer Networks (DCN) course.
+
+## Contents
+
+- Network Topologies
+- IP Addressing and Subnetting
+- Routing Protocols
+- Switching Concepts
+- Socket Programming
+- Client-Server Communication
+- Network Simulation
+- Packet Analysis
+- Lab Assignments
+
+## Technologies Used
+
+- Cisco Packet Tracer
+- Wireshark
+- C / Java (Socket Programming)
+
+## Objective
+
+To understand the fundamentals of computer networks through practical implementation, network simulation, protocol analysis, and communication between networked systems.
