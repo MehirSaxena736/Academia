@@ -1,1 +1,24 @@
+# Design and Analysis of Algorithms (DAA)
 
+This folder contains the laboratory programs and practical assignments completed as part of the Design and Analysis of Algorithms (DAA) course.
+
+## Contents
+
+- Divide and Conquer Algorithms
+- Greedy Algorithms
+- Dynamic Programming
+- Backtracking
+- Branch and Bound
+- Graph Algorithms
+- Sorting and Searching
+- Algorithm Analysis
+- Lab Assignments
+
+## Technologies Used
+
+- C++
+- Visual Studio Code
+
+## Objective
+
+To understand algorithm design techniques, analyze their time and space complexity, and implement efficient solutions for computational problems.
