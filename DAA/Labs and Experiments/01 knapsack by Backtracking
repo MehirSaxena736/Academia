@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int max(int a, int b) {
+    return (a > b) ? a : b;
+}
+
+int knapSackBacktrack(int W, int wt[], int val[], int n, int idx, int currW, int currVal) {
+    if (idx == n || currW == W) 
+        return currVal;  
+
+    
+    int include = 0;
+    if (wt[idx] <= W - currW)
+        include = knapSackBacktrack(W, wt, val, n, idx + 1, currW + wt[idx], currVal + val[idx]);
+
+    
+    int exclude = knapSackBacktrack(W, wt, val, n, idx + 1, currW, currVal);
+
+    
+    return max(include, exclude);
+}
+
+int main() {
+    int val[] = {60, 100, 120}; 
+    int wt[] = {10, 20, 30};     
+    int W = 50;                  
+    int n = sizeof(val) / sizeof(val[0]); 
+    printf("Maximum value: %d\n", knapSackBacktrack(W, wt, val, n, 0, 0, 0));
+    return 0;
+}

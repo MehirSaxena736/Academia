@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct TreeNode {
+    int key;
+    struct TreeNode* left;
+    struct TreeNode* right;
+};
+
+struct TreeNode* createNode(int key) {
+    struct TreeNode* newNode = (struct TreeNode*)malloc(sizeof(struct TreeNode));
+    newNode->key = key;
+    newNode->left = newNode->right = NULL;
+    return newNode;
+}
+
+struct TreeNode* insert_recursive(struct TreeNode* root, int key) {
+    
+    if (root == NULL) {
+        return createNode(key);
+    }
+    if (key < root->key) {
+        root->left = insert_recursive(root->left, key);
+    } else if (key > root->key) {
+        root->right = insert_recursive(root->right, key);
+    }
+
+    return root;
+}
+
+void inorder_traversal(struct TreeNode* root) {
+    if (root != NULL) {
+        inorder_traversal(root->left);
+        printf("%d ", root->key);
+        inorder_traversal(root->right);
+    }
+}
+
+int main() {
+    struct TreeNode* root = NULL;
+    int n, key;
+
+    printf("Enter the number of keys to insert: ");
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; i++) {
+        printf("Enter key %d: ", i + 1);
+        scanf("%d", &key);
+        root = insert_recursive(root, key);
+    }
+    printf("Inorder traversal of the BST (Recursive):\n");
+    inorder_traversal(root);
+
+    return 0;
+}

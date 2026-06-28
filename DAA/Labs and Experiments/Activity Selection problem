@@ -1,0 +1,53 @@
+#include <stdio.h>
+
+typedef struct {
+    int start;
+    int end;
+} Activity;
+
+void sortActivities(Activity activities[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (activities[j].end > activities[j + 1].end) {
+                Activity temp = activities[j];
+                activities[j] = activities[j + 1];
+                activities[j + 1] = temp;
+            }
+        }
+    }
+}
+void activitySelection(Activity activities[], int n) {
+
+    sortActivities(activities, n);
+
+    printf("Selected Activities: \n");
+    int lastEnd = activities[0].end;
+    printf("Activity 1: Start = %d, End = %d\n", activities[0].start, activities[0].end);
+
+    
+    int count = 1; 
+    for (int i = 1; i < n; i++) {
+        if (activities[i].start >= lastEnd) {
+            printf("Activity %d: Start = %d, End = %d\n", i + 1, activities[i].start, activities[i].end);
+            lastEnd = activities[i].end;
+            count++;
+        }
+    }
+    printf("\nTotal number of selected activities: %d\n", count);
+}
+
+int main() {
+    int n;
+    printf("Enter the number of activities: ");
+    scanf("%d", &n);
+
+    Activity activities[n];
+    for (int i = 0; i < n; i++) {
+        printf("Enter start and end time for activity %d: ", i + 1);
+        scanf("%d %d", &activities[i].start, &activities[i].end);
+    }
+
+    activitySelection(activities, n);
+    return 0;
+}
+
